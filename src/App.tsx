@@ -1,10 +1,16 @@
 import 'assets/styles/App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from 'pages/Home';
+import Header from 'components/Header';
 
 const App = () => {
   return (
-    <>
-      <p className="text-3xl">Hello World</p>
-    </>
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </Router>
   );
 };
 
