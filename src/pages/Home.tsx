@@ -1,9 +1,10 @@
+import nagahamaCastle from 'assets/images/nagahama_castle.jpg';
+
 const Home = () => {
   return (
-    <div>
-      <h1>Nagahama Group</h1>
-      <p>私は長浜です</p>
-    </div>
+    <main>
+      <img src={nagahamaCastle} alt="Nagahama Castle" />
+    </main>
   );
 };
 

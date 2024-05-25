@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,301,701,300,501,401,901,400&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#logo {
+  font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+  font-weight: 500;
+}
+
+html,
+body {
+  font-family: 'Satoshi', sans-serif;
+}
