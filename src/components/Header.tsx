@@ -1,9 +1,17 @@
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEarthAmericas } from '@fortawesome/free-solid-svg-icons';
+import {
+  faEarthAmericas,
+  faCaretDown,
+} from '@fortawesome/free-solid-svg-icons';
+import linksDataJSON from 'data/links.json';
+import { PossibleLanguages } from 'types/types';
+// import { LinksData } from 'types/types';
 
 const Header = () => {
   const [menuVisible, setMenuVisible] = useState(false);
+  const [lanugage, setLanguage] = useState<PossibleLanguages>('en');
+  const { links: linksData } = linksDataJSON;
 
   const toggleMenu = () => {
     setMenuVisible(!menuVisible);
@@ -24,7 +32,7 @@ const Header = () => {
           className="flex relative lg:mx-6 p-4  justify-between items-center "
         >
           <a
-            href="#"
+            href="/"
             id="logo"
             className="text-3xl my-1 font-bold leading-none"
           >
@@ -47,9 +55,14 @@ const Header = () => {
           </div>
           <div id="header_utilities" className="hidden lg:flex">
             <div>
-              <span className="mx-2">EN</span>
+              <button onClick={() => setLanguage('en')} className="mx-2">
+                EN
+              </button>
+              {/* <span className="mx-2">EN</span> */}
               <span className="mx-1">|</span>
-              <span className="mx-2">JPN</span>
+              <button onClick={() => setLanguage('jpn')} className="mx-2">
+                JPN
+              </button>
             </div>
             <FontAwesomeIcon
               icon={faEarthAmericas}
@@ -59,23 +72,19 @@ const Header = () => {
         </div>
       </header>
 
-      <nav className="hidden lg:block mx-6 px-4 py-3">
-        <ul className="flex flex-row space-x-2 text-xl">
-          <li>
-            <a href="#">Home</a>
-          </li>
-
-          <li>
-            <a href="#">History</a>
-          </li>
-
-          <li>
-            <a href="#">Services</a>
-          </li>
-
-          <li>
-            <a href="#">Careers</a>
-          </li>
+      <nav id="header_links" className="hidden lg:block mx-6 px-4 py-3">
+        <ul className="flex flex-row space-x-10 text-lg">
+          {linksData.map((link, index) => (
+            <li
+              key={index}
+              className="font-medium text-slate-700 hover:text-slate-500"
+            >
+              <a href={link.url} className="">
+                <span>{lanugage === 'en' ? link.title : link.title_jp}</span>
+                <FontAwesomeIcon icon={faCaretDown} className="ml-2" />
+              </a>
+            </li>
+          ))}
         </ul>
       </nav>
       <div
@@ -83,11 +92,12 @@ const Header = () => {
       >
         <div
           className="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"
+          aria-hidden
           onClick={toggleMenu}
         ></div>
         <nav className="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
           <div className="flex items-center mb-8">
-            <a className="mr-auto text-3xl font-bold leading-none" href="#">
+            <a className="mr-auto text-3xl font-bold leading-none" href="/">
               <svg className="h-12" viewBox="0 0 10240 10240">
                 <path
                   xmlns="http://www.w3.org/2000/svg"
@@ -95,7 +105,7 @@ const Header = () => {
                 ></path>
               </svg>
             </a>
-            <button className="navbar-close">
+            <button className="navbar-close" onClick={toggleMenu}>
               <svg
                 className="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500"
                 xmlns="http://www.w3.org/2000/svg"
@@ -114,44 +124,16 @@ const Header = () => {
           </div>
           <div>
             <ul>
-              <li className="mb-1">
-                <a
-                  className="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
-                  href="#"
-                >
-                  Home
-                </a>
-              </li>
-            </ul>
-            <ul>
-              <li className="mb-1">
-                <a
-                  className="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
-                  href="#"
-                >
-                  History
-                </a>
-              </li>
-            </ul>
-            <ul>
-              <li className="mb-1">
-                <a
-                  className="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
-                  href="#"
-                >
-                  Services
-                </a>
-              </li>
-            </ul>
-            <ul>
-              <li className="mb-1">
-                <a
-                  className="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
-                  href="#"
-                >
-                  Career
-                </a>
-              </li>
+              {linksData.map((link, index) => (
+                <li key={index} className="mb-1">
+                  <a
+                    className="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+                    href={link.url}
+                  >
+                    {link.title}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
           <div className="mt-auto">

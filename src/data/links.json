@@ -1,0 +1,24 @@
+{
+  "links": [
+    {
+      "title": "Nagahama Heritage",
+      "title_jp": "長濱の遺産",
+      "url": "/heritage"
+    },
+    {
+      "title": "Industries",
+      "title_jp": "産業",
+      "url": "/industries"
+    },
+    {
+      "title": "Sustainability",
+      "title_jp": "持続可能性",
+      "url": "/sustanability"
+    },
+    {
+      "title": "Corporate Information",
+      "title_jp": "企業情報",
+      "url": "/corporate"
+    }
+  ]
+}
