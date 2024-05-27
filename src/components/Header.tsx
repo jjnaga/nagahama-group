@@ -5,13 +5,18 @@ import {
   faCaretDown,
 } from '@fortawesome/free-solid-svg-icons';
 import linksDataJSON from 'data/links.json';
-import { PossibleLanguages } from 'types/types';
+import { PossibleLanguages, PossibleScrollDirections } from 'types/types';
 import { useAppContext } from 'context/Provider';
 
 const Header = () => {
   const { setHeaderHeight } = useAppContext();
   const [currentHeight, setCurrentHeight] = useState(0);
+  const scrollTimeout = useRef<null | number>(null);
+  const previousYOffset = useRef(0);
   const [menuVisible, setMenuVisible] = useState(false);
+  const [pageYOffset, setPageYOffset] = useState(0);
+  const [directionOfScroll, setDirectionOfScroll] =
+    useState<PossibleScrollDirections>('down');
   const [lanugage, setLanguage] = useState<PossibleLanguages>('en');
   const { links: linksData } = linksDataJSON;
   const headerRef = useRef<HTMLDivElement>(null);
@@ -20,6 +25,7 @@ const Header = () => {
     setMenuVisible(!menuVisible);
   };
 
+  // Listener for resize. Used to update the margin-top on body that is linked to height of Header.
   useEffect(() => {
     const handleResize = () => {
       if (headerRef.current) {
@@ -33,8 +39,40 @@ const Header = () => {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  });
+  }, []);
 
+  // Listener for scroll. Used to hide/show the header.
+  useEffect(() => {
+    const handleScroll = () => {
+      // pageYOffset
+      setPageYOffset(() => window.scrollY);
+
+      // Direction
+      if (scrollTimeout.current) {
+        clearTimeout(scrollTimeout.current);
+      }
+
+      scrollTimeout.current = setTimeout(() => {
+        const currentYOffset = window.scrollY;
+        if (currentYOffset > previousYOffset.current) {
+          setDirectionOfScroll('down');
+        } else if (currentYOffset < previousYOffset.current) {
+          setDirectionOfScroll('up');
+        }
+        previousYOffset.current = currentYOffset;
+      }, 100); // Adjust debounce delay as needed
+    };
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      if (scrollTimeout.current) {
+        clearTimeout(scrollTimeout.current);
+      }
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  // Update height on change.
   useEffect(() => {
     if (headerRef.current) {
       setHeaderHeight(headerRef.current.clientHeight);
@@ -43,7 +81,15 @@ const Header = () => {
 
   return (
     <div
-      className="fixed top-0 left-0 w-full bg-white border-t-[5px] border-b-[4px] border-t-blue-800"
+      // if the amount scrolled down is equal to the height of the header, then hide the header. lg media breakpoints
+      // set for fixed, top and left because if screen is smaller than lg, then have it be a normal block.
+      className={`${
+        headerRef.current &&
+        pageYOffset > headerRef.current.clientHeight &&
+        directionOfScroll === 'down'
+          ? '-translate-y-full'
+          : 'translate-y-0'
+      } lg:fixed lg:top-0 lg:left-0 w-full bg-white border-t-[5px] border-b-[4px] border-t-blue-800 z-50 transition-transform duration-300`}
       id="wrapper_header"
       ref={headerRef}
     >
