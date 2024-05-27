@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faEarthAmericas,
@@ -6,27 +6,48 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import linksDataJSON from 'data/links.json';
 import { PossibleLanguages } from 'types/types';
-// import { LinksData } from 'types/types';
+import { useAppContext } from 'context/Provider';
 
 const Header = () => {
+  const { setHeaderHeight } = useAppContext();
+  const [currentHeight, setCurrentHeight] = useState(0);
   const [menuVisible, setMenuVisible] = useState(false);
   const [lanugage, setLanguage] = useState<PossibleLanguages>('en');
   const { links: linksData } = linksDataJSON;
+  const headerRef = useRef<HTMLDivElement>(null);
 
   const toggleMenu = () => {
     setMenuVisible(!menuVisible);
   };
 
   useEffect(() => {
-    console.log('menuvisible updated', menuVisible);
-  }, [menuVisible]);
+    const handleResize = () => {
+      if (headerRef.current) {
+        setCurrentHeight(headerRef.current.clientHeight);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  });
+
+  useEffect(() => {
+    if (headerRef.current) {
+      setHeaderHeight(headerRef.current.clientHeight);
+    }
+  }, [currentHeight, setHeaderHeight]);
 
   return (
-    <div id="wrapper_header">
-      <header
-        id="header"
-        className="border-t-[3px] border-b-[1px] border-t-blue-800"
-      >
+    <div
+      className="fixed top-0 left-0 w-full bg-white border-t-[5px] border-b-[4px] border-t-blue-800"
+      id="wrapper_header"
+      ref={headerRef}
+    >
+      <header id="header" className="border-b-[2px]">
         <div
           id="header_inner"
           className="flex relative lg:mx-6 p-4  justify-between items-center "
