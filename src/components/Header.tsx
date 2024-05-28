@@ -5,11 +5,11 @@ import {
   faCaretDown,
 } from '@fortawesome/free-solid-svg-icons';
 import linksDataJSON from 'data/links.json';
-import { PossibleLanguages, PossibleScrollDirections } from 'types/types';
+import { PossibleScrollDirections } from 'types/types';
 import { useAppContext } from 'context/Provider';
 
 const Header = () => {
-  const { setHeaderHeight } = useAppContext();
+  const { language, setLanguage, setHeaderHeight } = useAppContext();
   const [currentHeight, setCurrentHeight] = useState(0);
   const scrollTimeout = useRef<null | number>(null);
   const previousYOffset = useRef(0);
@@ -17,7 +17,6 @@ const Header = () => {
   const [pageYOffset, setPageYOffset] = useState(0);
   const [directionOfScroll, setDirectionOfScroll] =
     useState<PossibleScrollDirections>('down');
-  const [lanugage, setLanguage] = useState<PossibleLanguages>('en');
   const { links: linksData } = linksDataJSON;
   const headerRef = useRef<HTMLDivElement>(null);
 
@@ -127,8 +126,8 @@ const Header = () => {
               </button>
               {/* <span className="mx-2">EN</span> */}
               <span className="mx-1">|</span>
-              <button onClick={() => setLanguage('jpn')} className="mx-2">
-                JPN
+              <button onClick={() => setLanguage('日本語')} className="mx-2">
+                日本語
               </button>
             </div>
             <FontAwesomeIcon
@@ -147,7 +146,7 @@ const Header = () => {
               className="font-medium text-slate-700 hover:text-slate-500"
             >
               <a href={link.url} className="">
-                <span>{lanugage === 'en' ? link.title : link.title_jp}</span>
+                <span>{language === 'en' ? link.title : link.title_jp}</span>
                 <FontAwesomeIcon icon={faCaretDown} className="ml-2" />
               </a>
             </li>

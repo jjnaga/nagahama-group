@@ -8,7 +8,7 @@ export type LinksData = {
   links: Link[];
 };
 
-export type PossibleLanguages = 'en' | 'jpn';
+export type PossibleLanguages = 'en' | '日本語';
 export type PossibleScrollDirections = 'up' | 'down';
 
 export interface CarouselProps {
@@ -25,4 +25,17 @@ export interface CarouselJSONItem {
 
 export interface CarouselItemProps extends CarouselJSONItem {
   keyString: string;
+}
+
+export interface Highlight {
+  title: string;
+  text: string;
+  url: string;
+  imageURL: string;
+  description: string;
+  description_japanese: string;
+}
+
+export interface HighlightsProps {
+  highlights: Highlight[];
 }

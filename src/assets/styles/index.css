@@ -66,3 +66,7 @@ body {
 .slick-dots li.slick-active button::before {
   background-color: rgb(30 64 175);
 }
+
+.Footer {
+  background-color: rgb(30 64 175);
+}
