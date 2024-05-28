@@ -28,7 +28,6 @@ const CarouselItem: React.FC<CarouselItemProps> = ({
           className="inline-block relative sm:absolute sm:top-0 sm:left-0 text-xl"
           href="/heritage"
         >
-          {/* <span className="absolute top-1/2 -left-2 transform  rotate- border-solid border-r-2 border-b-2 border-blue-600 w-2 h-2"></span> */}
           <span className="absolute w-2 h-2 -left-2  -translate-y-1/2 top-1/2  transform -rotate-45 border-blue-600 border-solid border-r-2 border-b-2"></span>
           <span className="sm:hidden pl-2 text-blue-500 hover:text-blue-700 underline ">
             {linkName}

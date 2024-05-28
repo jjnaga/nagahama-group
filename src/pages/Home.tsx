@@ -2,6 +2,7 @@ import { useAppContext } from 'context/Provider';
 import { useEffect, useState } from 'react';
 import Carousel from 'components/Carousel';
 import carouselJSON from 'data/carousel.json';
+import HighlightCard from 'components/HighlightCard';
 
 const Home = () => {
   const { items } = carouselJSON;
@@ -34,13 +35,26 @@ const Home = () => {
     <main style={mainStyle}>
       <div id="main_body">
         <Carousel items={items} />
-        <div id="highlights" className="mt-16">
-          <div id="highlights_inner" className="mx-8 px-16">
-            <h2 className="flex flex-col align-center items-center text-3xl">
-              Highlight Topics
-            </h2>
+
+        <section id="highlights_wrapper" className="mt-16">
+          <div id="highlights_wrapper_inner" className="px-2 sm:px-4">
+            <div
+              id="highlights_header"
+              className="mb-8 flex flex-col align-center items-center"
+            >
+              <h2 className="text-3xl">Highlight Topics</h2>
+            </div>
+            <ul
+              id="highlights_body"
+              style={{ marginBottom: '500px' }}
+              className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-2"
+            >
+              {Array.from({ length: 4 }, (_, index) => (
+                <HighlightCard />
+              ))}
+            </ul>
           </div>
-        </div>
+        </section>
       </div>
     </main>
   );
