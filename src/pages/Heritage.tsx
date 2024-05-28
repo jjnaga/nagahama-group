@@ -1,10 +1,7 @@
 import { useAppContext } from 'context/Provider';
 import { useEffect, useState } from 'react';
-import Carousel from 'components/Carousel';
-import carouselJSON from 'data/carousel.json';
 
-const Home = () => {
-  const { items } = carouselJSON;
+const Heritage = () => {
   const { headerHeight } = useAppContext();
   const [isLargeScreen, setIsLargeScreen] = useState(false);
 
@@ -28,22 +25,11 @@ const Home = () => {
     marginTop: isLargeScreen ? `${headerHeight}px` : '0',
   };
 
-  console.log('huh', carouselJSON);
-
   return (
-    <main style={mainStyle}>
-      <div id="main_body">
-        <Carousel items={items} />
-        <div id="highlights" className="mt-16">
-          <div id="highlights_inner" className="mx-8 px-16">
-            <h2 className="flex flex-col align-center items-center text-3xl">
-              Highlight Topics
-            </h2>
-          </div>
-        </div>
-      </div>
-    </main>
+    <div style={mainStyle}>
+      <p>Heritage</p>
+    </div>
   );
 };
 
-export default Home;
+export default Heritage;

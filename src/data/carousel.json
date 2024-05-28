@@ -1,0 +1,18 @@
+{
+  "items": [
+    {
+      "title": "REACH THE SUMMIT",
+      "linkName": "Minute of Nagahama 105 years",
+      "imageDefault": "/src/assets/images/nagahama_castle_mobile.jpg",
+      "imageTablet": "/src/assets/images/nagahama_castle_tablet.jpg",
+      "imageLarge": "/src/assets/images/nagahama_castle_pc.jpg"
+    },
+    {
+      "title": "CONNECTING HAWAII",
+      "linkName": "Transportation",
+      "imageDefault": "/src/assets/images/bus_mobile.jpg",
+      "imageTablet": "/src/assets/images/bus_tablet.jpg",
+      "imageLarge": "/src/assets/images/bus_pc.jpg"
+    }
+  ]
+}

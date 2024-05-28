@@ -6,19 +6,19 @@
       "url": "/heritage"
     },
     {
-      "title": "Industries",
+      "title": "Products & Solutions",
       "title_jp": "産業",
       "url": "/industries"
-    },
-    {
-      "title": "Sustainability",
-      "title_jp": "持続可能性",
-      "url": "/sustanability"
     },
     {
       "title": "Corporate Information",
       "title_jp": "企業情報",
       "url": "/corporate"
+    },
+    {
+      "title": "Sustainability",
+      "title_jp": "持続可能性",
+      "url": "/sustanability"
     }
   ]
 }
