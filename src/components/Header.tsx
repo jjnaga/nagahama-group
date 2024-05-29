@@ -51,7 +51,7 @@ const Header = () => {
         clearTimeout(scrollTimeout.current);
       }
 
-      scrollTimeout.current = setTimeout(() => {
+      scrollTimeout.current = window.setTimeout(() => {
         const currentYOffset = window.scrollY;
         if (currentYOffset > previousYOffset.current) {
           setDirectionOfScroll('down');

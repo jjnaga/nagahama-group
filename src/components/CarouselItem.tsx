@@ -1,4 +1,5 @@
 import { CarouselItemProps } from 'types/types';
+import { getImageUrl } from 'utils/utils';
 
 const CarouselItem: React.FC<CarouselItemProps> = ({
   keyString,
@@ -35,9 +36,9 @@ const CarouselItem: React.FC<CarouselItemProps> = ({
         </a>
       </div>
       <picture>
-        <source media="(min-width: 960px)" srcSet={imageLarge} />
-        <source media="(min-width: 640px)" srcSet={imageTablet} />
-        <img src={imageDefault} />
+        <source media="(min-width: 960px)" srcSet={getImageUrl(imageLarge)} />
+        <source media="(min-width: 640px)" srcSet={getImageUrl(imageTablet)} />
+        <img src={getImageUrl(imageDefault)} />
       </picture>
     </li>
     // </div>

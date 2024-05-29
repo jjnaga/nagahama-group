@@ -20,14 +20,11 @@ const Highlights: React.FC<HighlightsProps> = ({ highlights }) => {
           id="highlights_body"
           className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-2"
         >
-          {highlights.map((highlight, index) => {
-            console.log('wat highlight', highlight);
-            return (
-              <li key={index}>
-                <HighlightCard {...highlight} />
-              </li>
-            );
-          })}
+          {highlights.map((highlight, index) => (
+            <li key={index}>
+              <HighlightCard {...highlight} />
+            </li>
+          ))}
         </ul>
       </div>
     </section>

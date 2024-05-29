@@ -5,14 +5,14 @@
       "description": "Earnings release for the three months ended March 31, 2024",
       "description_japanese": "2024年3月31日までの3か月間の業績発表",
       "url": "/",
-      "imageURL": "/src/assets/images/nagahama.jpg"
+      "imageURL": "nagahama.jpg"
     },
     {
       "title": "TheBus App",
       "description": "Improved bus app for Hawaii released",
       "description_japanese": "ハワイ向け改良バスアプリがリリース",
       "url": "/",
-      "imageURL": "/src/assets/images/nagahama.jpg"
+      "imageURL": "nagahama.jpg"
     }
   ]
 }

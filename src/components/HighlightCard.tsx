@@ -1,5 +1,6 @@
 import { useAppContext } from 'context/Provider';
 import { Highlight } from 'types/types';
+import { getImageUrl } from 'utils/utils';
 
 const HighlightCard: React.FC<Highlight> = ({
   description,
@@ -12,7 +13,7 @@ const HighlightCard: React.FC<Highlight> = ({
   return (
     <li className="highlight_wrapper">
       <div className="highlight_header border ">
-        <img src={imageURL} alt={description} />
+        <img src={getImageUrl(imageURL)} alt={description} />
       </div>
       <div className="highlight_body mt-8 pl-2">
         <p className="text-xl min-h-12">

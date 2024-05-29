@@ -31,8 +31,6 @@ const Home = () => {
     marginTop: isLargeScreen ? `${headerHeight}px` : '0',
   };
 
-  console.log('huh', carouselJSON);
-
   return (
     <main style={mainStyle}>
       <div id="main_body">
