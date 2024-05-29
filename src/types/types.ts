@@ -29,7 +29,6 @@ export interface CarouselItemProps extends CarouselJSONItem {
 
 export interface Highlight {
   title: string;
-  text: string;
   url: string;
   imageURL: string;
   description: string;

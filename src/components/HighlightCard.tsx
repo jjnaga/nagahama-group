@@ -4,9 +4,7 @@ import { Highlight } from 'types/types';
 const HighlightCard: React.FC<Highlight> = ({
   description,
   imageURL,
-  text,
   description_japanese,
-  // title,
   url,
 }) => {
   const { language } = useAppContext();
@@ -14,7 +12,7 @@ const HighlightCard: React.FC<Highlight> = ({
   return (
     <li className="highlight_wrapper">
       <div className="highlight_header border ">
-        <img src={imageURL} alt={text} />
+        <img src={imageURL} alt={description} />
       </div>
       <div className="highlight_body mt-8 pl-2">
         <p className="text-xl min-h-12">
