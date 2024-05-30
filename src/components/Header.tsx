@@ -79,91 +79,99 @@ const Header = () => {
   }, [currentHeight, setHeaderHeight]);
 
   return (
-    <div
-      // if the amount scrolled down is equal to the height of the header, then hide the header. lg media breakpoints
-      // set for fixed, top and left because if screen is smaller than lg, then have it be a normal block.
-      className={`${
-        headerRef.current &&
-        pageYOffset > headerRef.current.clientHeight &&
-        directionOfScroll === 'down'
-          ? '-translate-y-full'
-          : 'translate-y-0'
-      } lg:fixed lg:top-0 lg:left-0 w-full bg-white border-t-[5px] border-b-[4px] border-t-blue-800 z-50 transition-transform duration-300`}
-      id="wrapper_header"
-      ref={headerRef}
-    >
-      <header id="header" className="border-b-[2px]">
-        <div
-          id="header_inner"
-          className="flex relative lg:mx-6 p-4  justify-between items-center "
-        >
-          <a
-            href="/"
-            id="logo"
-            className="text-3xl my-1 font-bold leading-none"
+    <div id="header">
+      <div
+        // if the amount scrolled down is equal to the height of the header, then hide the header. lg media breakpoints
+        // set for fixed, top and left because if screen is smaller than lg, then have it be a normal block.
+        className={`${
+          headerRef.current &&
+          pageYOffset > headerRef.current.clientHeight &&
+          directionOfScroll === 'down'
+            ? 'lg:-translate-y-full'
+            : 'lg:translate-y-0'
+        } lg:fixed lg:top-0 lg:left-0 w-full bg-white border-t-[5px] border-b-[4px] border-t-blue-800 transition-transform duration-300 z-[2000]`}
+        id="wrapper_header"
+        ref={headerRef}
+      >
+        {/* <div
+        // if the amount scrolled down is equal to the height of the header, then hide the header. lg media breakpoints
+        // set for fixed, top and left because if screen is smaller than lg, then have it be a normal block.
+        className={`lg:fixed lg:top-0 lg:left-0 w-full bg-white border-t-[5px] border-b-[4px] border-t-blue-800 `}
+        id="wrapper_header"
+        ref={headerRef}
+      > */}
+        <header id="header" className="border-b-[2px]">
+          <div
+            id="header_inner"
+            className="flex relative lg:mx-6 p-4  justify-between items-center "
           >
-            NAGAHAMA
-          </a>
-          <div className="lg:hidden">
-            <button
-              className="navbar-burger flex items-center text-blue-600 p-3"
-              onClick={toggleMenu}
+            <a
+              href="/"
+              id="logo"
+              className="text-3xl my-1 font-bold leading-none"
             >
-              <svg
-                className="block h-4 w-4 fill-current"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
+              NAGAHAMA
+            </a>
+            <div className="lg:hidden">
+              <button
+                className="navbar-burger flex items-center text-blue-600 p-3"
+                onClick={toggleMenu}
               >
-                <title>Mobile menu</title>
-                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-              </svg>
-            </button>
-          </div>
-          <div id="header_utilities" className="hidden lg:flex">
-            <div>
-              <button onClick={() => setLanguage('en')} className="mx-2">
-                EN
-              </button>
-              {/* <span className="mx-2">EN</span> */}
-              <span className="mx-1">|</span>
-              <button onClick={() => setLanguage('日本語')} className="mx-2">
-                日本語
+                <svg
+                  className="block h-4 w-4 fill-current"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <title>Mobile menu</title>
+                  <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+                </svg>
               </button>
             </div>
-            <FontAwesomeIcon
-              icon={faEarthAmericas}
-              className="mr-2 ml-6 text-2xl text-blue-800"
-            />
+            <div id="header_utilities" className="hidden lg:flex">
+              <div>
+                <button onClick={() => setLanguage('en')} className="mx-2">
+                  EN
+                </button>
+                {/* <span className="mx-2">EN</span> */}
+                <span className="mx-1">|</span>
+                <button onClick={() => setLanguage('日本語')} className="mx-2">
+                  日本語
+                </button>
+              </div>
+              <FontAwesomeIcon
+                icon={faEarthAmericas}
+                className="mr-2 ml-6 text-2xl text-blue-800"
+              />
+            </div>
           </div>
-        </div>
-      </header>
+        </header>
 
-      <nav id="header_links" className="hidden lg:block mx-6 px-4 py-3">
-        <ul className="flex flex-row space-x-10 text-lg">
-          {linksData.map((link, index) => (
-            <li
-              key={index}
-              className="font-medium text-slate-700 hover:text-slate-500"
-            >
-              <a href={link.url} className="">
-                <span>{language === 'en' ? link.title : link.title_jp}</span>
-                <FontAwesomeIcon icon={faCaretDown} className="ml-2" />
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-      <div
-        className={`navbar-menu ${menuVisible ? '' : 'hidden'} relative z-50 `}
-      >
+        <nav id="header_links" className="hidden lg:block mx-6 px-4 py-3">
+          <ul className="flex flex-row space-x-10 text-lg">
+            {linksData.map((link, index) => (
+              <li
+                key={index}
+                className="font-medium text-slate-700 hover:text-slate-500"
+              >
+                <a href={link.url} className="">
+                  <span>{language === 'en' ? link.title : link.title_jp}</span>
+                  <FontAwesomeIcon icon={faCaretDown} className="ml-2" />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+      <div id="navbar-menu-mobile" className={`${menuVisible ? '' : 'hidden'}`}>
         <div
-          className="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"
+          className="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25 z-[2000]"
           aria-hidden
           onClick={toggleMenu}
         ></div>
-        <nav className="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
-          <div className="flex items-center mb-8">
-            <a className="mr-auto text-3xl font-bold leading-none" href="/">
+        <nav className="fixed inset-0 flex flex-col w-2/3  py-6 px-6 bg-white border-r overflow-y-auto z-[2000]">
+          {/* <nav className="fixed top-0 left-0 bottom-0 flex flex-col w-5/6  py-6 px-6 bg-white border-r overflow-y-auto"> */}
+          <div className="flex justify-between">
+            <a className="text-3xl font-bold leading-none" href="/">
               <svg className="h-12" viewBox="0 0 10240 10240">
                 <path
                   xmlns="http://www.w3.org/2000/svg"
@@ -188,7 +196,7 @@ const Header = () => {
               </svg>
             </button>
           </div>
-          <div>
+          <div className="mt-6">
             <ul>
               {linksData.map((link, index) => (
                 <li key={index} className="mb-1">
