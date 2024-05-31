@@ -16,7 +16,7 @@ interface Props {
 
 export const Provider: React.FC<Props> = ({ children }) => {
   const [headerHeight, setHeaderHeight] = useState(0);
-  const [language, setLanguage] = useState<PossibleLanguages>('日本語');
+  const [language, setLanguage] = useState<PossibleLanguages>('en');
 
   return (
     <AppContext.Provider
