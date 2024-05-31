@@ -110,7 +110,7 @@ const Header = () => {
               id="logo"
               className="text-3xl my-1 font-bold leading-none"
             >
-              NAGAHAMA test
+              NAGAHAMA test2
             </a>
             <div className="lg:hidden">
               <button
