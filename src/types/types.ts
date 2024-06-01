@@ -38,3 +38,25 @@ export interface Highlight {
 export interface HighlightsProps {
   highlights: Highlight[];
 }
+
+export interface WhoWeAreHeader {
+  body: string;
+  body_jpn: string;
+  lead: string;
+  lead_jpn: string;
+}
+
+export interface WhoWeAreCard {
+  header: string;
+  header_jpn: string;
+  lead: string;
+  lead_jpn: string;
+  imageURL: string;
+}
+
+export interface WhoWeAreProps {
+  data: {
+    header: WhoWeAreHeader;
+    cards: WhoWeAreCard[];
+  };
+}

@@ -1,0 +1,31 @@
+{
+  "header": {
+    "body": "Who We Are",
+    "body_jpn": "私たちについて",
+    "lead": "From humble origins, the Nagahama Group supports and shapes the foundation of society and industry, elevating the standard of living and technological advancement for all. Using technology that is indispensable for people's lives, Nagahama solutions support human well-being.",
+    "lead_jpn": "ナガハマグループは、小さな会社として始まり、社会と産業の基盤を支え、形作り、すべての人の生活水準と技術の進歩を高めてきました。人々の生活に欠かせない技術で、ナガハマのソリューションは人々の幸福を支えています。"
+  },
+  "cards": [
+    {
+      "header": "Technology",
+      "header_jpn": "技術",
+      "lead": "As a global conglomerate, our presence in the technology sector is transforming the world. Through cutting-edge innovations in AI, IoT, and renewable energy, we are revolutionizing industries, enhancing connectivity, and empowering individuals worldwide. Our commitment to sustainable practices ensures that our technological advancements benefit society and the planet, driving progress and creating a brighter future for all.",
+      "lead_jpn": "グローバルな複合企業として、テクノロジー分野における当社の存在は世界を変革しています。AI、IoT、再生可能エネルギーの最先端のイノベーションを通じて、当社は業界に革命を起こし、接続性を高め、世界中の人々に力を与えています。持続可能な慣行への取り組みにより、当社の技術進歩が社会と地球に利益をもたらし、進歩を促進し、すべての人にとってより明るい未来を創造します。",
+      "imageURL": "technology.jpg"
+    },
+    {
+      "header": "Water",
+      "header_jpn": "水",
+      "lead": "In the water sector, we are fundamentally changing the world by ensuring access to clean water for communities worldwide. Through advanced water purification technologies and sustainable water management practices, we are addressing one of the most critical challenges facing humanity. By promoting water conservation and efficient use, we are safeguarding this precious resource for future generations.",
+      "lead_jpn": "水分野では、世界中のコミュニティがきれいな水を利用できるようにすることで、世界を根本的に変えようとしています。高度な浄水技術と持続可能な水管理の実践を通じて、人類が直面する最も重要な課題の 1 つに取り組んでいます。水の保全と効率的な使用を推進することで、この貴重な資源を将来の世代のために保護しています。",
+      "imageURL": "water.jpg"
+    },
+    {
+      "header": "Housing",
+      "header_jpn": "住宅産業",
+      "lead": "Our global footprint in the housing sector is reshaping communities and improving living standards around the world.Through innovative approaches to affordable housing and sustainable urban development, we are creating inclusive, resilient cities. By providing access to quality housing, we are empowering individuals and families, fostering social cohesion, and building a more equitable world.",
+      "lead_jpn": "住宅分野における当社の世界的な活動は、世界中のコミュニティの再構築と生活水準の向上に役立っています。手頃な価格の住宅と持続可能な都市開発への革新的なアプローチを通じて、当社は包括的で強靭な都市を創造しています。質の高い住宅へのアクセスを提供することで、個人と家族に力を与え、社会的結束を育み、より公平な世界を構築しています。",
+      "imageURL": "housing.jpg"
+    }
+  ]
+}
