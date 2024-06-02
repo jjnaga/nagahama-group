@@ -155,7 +155,7 @@ const Header = () => {
               >
                 <a href={link.url} className="">
                   <span>{language === 'en' ? link.title : link.title_jp}</span>
-                  <FontAwesomeIcon icon={faCaretDown} className="ml-2" />
+                  {/* <FontAwesomeIcon icon={faCaretDown} className="ml-2" /> */}
                 </a>
               </li>
             ))}

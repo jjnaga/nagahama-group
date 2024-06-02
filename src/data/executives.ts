@@ -17,7 +17,7 @@ const executives: Executives = {
       picture: 'eric.jpg',
     },
     {
-      name: 'Albert Babachinko',
+      name: 'Albert Babichenko',
       title: 'Representative Director and Executive Vice President',
       duties: ['President of North America Head Office'],
       picture: 'albert.jpg',
@@ -31,32 +31,27 @@ const executives: Executives = {
   ],
   directors: [
     {
-      name: 'Kenji Yamamoto',
+      name: 'Leila Nagahama',
       title: 'Executive Officer',
       duties: ['Chief Executive Officer for Head Office'],
     },
     {
-      name: 'Yuki Tanaka',
+      name: 'Yuki Nagahama',
       title: 'Executive Officer',
       duties: ['Chief Executive Officer for North America Head Office'],
     },
     {
-      name: 'Hiroshi Suzuki',
+      name: 'Jay Watanabe',
       title: 'Executive Officer',
-      duties: ['Chief Marketing Officer for JDM Land'],
+      duties: ['Chief Creative Officer for JDM Land'],
     },
     {
-      name: 'Takashi Nakamura',
-      title: 'Executive Officer',
-      duties: ['Chief Operating Officer for Nagahama Water'],
-    },
-    {
-      name: 'Naoki Matsumoto',
+      name: 'Roy Stevenson',
       title: 'Executive Officer',
       duties: ['Chief Strategy Officer for Naga Construction Hawaii'],
     },
     {
-      name: 'Yumi Kato',
+      name: 'Philip Morrison',
       title: 'Executive Officer',
       duties: ['Chief Strategy Officer for Naga Construction West'],
     },
@@ -71,17 +66,17 @@ const executives: Executives = {
       duties: ['Chief Operating Officer for Nagahama Hokkaido Region'],
     },
     {
-      name: 'Kenji Nakamura',
+      name: 'Pan Ling',
       title: 'Executive Officer',
       duties: ['Chief Innovation Officer for Hong Kong Division'],
     },
     {
-      name: 'Hiroshi Kato',
+      name: 'Justin Kim',
       title: 'Executive Officer',
       duties: ['Chief Operating Officer for Korea Division'],
     },
     {
-      name: 'Takashi Suzuki',
+      name: 'Arthur Jones',
       title: 'Executive Officer',
       duties: ['Chief Financial Officer for Nagahama Financial Holdings'],
     },
