@@ -18,6 +18,7 @@ export interface CarouselProps {
 export interface CarouselJSONItem {
   title: string;
   linkName: string;
+  linkURL: string;
   imageLarge: string;
   imageTablet: string;
   imageDefault: string;

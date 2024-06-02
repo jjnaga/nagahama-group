@@ -3,6 +3,7 @@
     {
       "title": "REACH THE SUMMIT",
       "linkName": "Minute of Nagahama 105 years",
+      "linkURL": "/heritage",
       "imageDefault": "nagahama_castle_mobile.jpg",
       "imageTablet": "nagahama_castle_tablet.jpg",
       "imageLarge": "nagahama_castle_pc.jpg"
@@ -10,6 +11,7 @@
     {
       "title": "CONNECTING HAWAII",
       "linkName": "Transportation",
+      "linkURL": "https://hea.thebus.org/",
       "imageDefault": "bus_mobile.jpg",
       "imageTablet": "bus_tablet.jpg",
       "imageLarge": "bus_pc.jpg"
