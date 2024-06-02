@@ -33,7 +33,7 @@ const Network: React.FC<NetworkProps> = ({
       </div>
       <div className="GlobalNetwork_Visual mt-3">
         <div
-          className={`Visual_Map h-auto transform transition-transform duration-300 ease-in-out
+          className={`Visual_Map h-auto transform transition-transform duration-300 ease-in-out hidden
            ${networkKey === 'default' ? 'md:block md:translate-y-0' : 'hidden -translate-y-full'}`}
         >
           <div
