@@ -92,3 +92,21 @@ export interface NetworkProps {
   regions: NetworkRegion[];
   network: RegionLocations;
 }
+
+export interface Executives {
+  executives: ExecutiveInfo[];
+  directors: DirectorInfo[];
+}
+
+export interface ExecutiveInfo {
+  name: string;
+  title: string;
+  duties?: string[];
+  picture: string;
+}
+
+export interface DirectorInfo {
+  name: string;
+  title: string;
+  duties: string[];
+}
