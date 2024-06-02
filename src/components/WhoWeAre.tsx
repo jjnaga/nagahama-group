@@ -35,12 +35,15 @@ const WhoWeAre: React.FC<WhoWeAreProps> = ({ data }) => {
               </div>
               <div id="wea-body" className="mt-3">
                 <div className="wea-heading">
-                  <a className="relative ml-2 text-xl" href="#">
+                  {/* <a className="relative ml-2 text-xl" href="#">
                     <span className="absolute w-2 h-2 -left-2  -translate-y-1/2 top-1/2  transform -rotate-45 border-blue-600 border-solid border-r-2 border-b-2"></span>
                     <span className=" pl-2 text-blue-500 hover:text-blue-700 underline ">
                       {language === 'en' ? header : header_jpn}
                     </span>
-                  </a>
+                  </a> */}
+                  <span className="text-xl underline ">
+                    {language === 'en' ? header : header_jpn}
+                  </span>
                 </div>
                 <p className="pt-1 lg:pt-2">
                   {language === 'en' ? lead : lead_jpn}
