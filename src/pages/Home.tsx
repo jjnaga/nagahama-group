@@ -6,6 +6,8 @@ import highlightsJSON from 'data/highlights.json';
 import Highlights from 'components/Highlights';
 import WhoWeAre from 'components/WhoWeAre';
 import WhoWeAreJSON from 'data/whoweare.json';
+import Network from 'components/Network';
+import networkData from 'data/network';
 
 const Home = () => {
   const { items } = carouselJSON;
@@ -39,6 +41,7 @@ const Home = () => {
         <Carousel items={items} />
         <Highlights highlights={highlights} />
         <WhoWeAre data={WhoWeAreJSON} />
+        <Network {...networkData} />
       </div>
     </main>
   );

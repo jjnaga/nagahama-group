@@ -18,7 +18,7 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
   return (
     <Slider {...settings}>
       {items.map((item, index) => (
-        <CarouselItem {...item} keyString={String(index)} />
+        <CarouselItem key={index} {...item} keyString={String(index)} />
       ))}
     </Slider>
   );

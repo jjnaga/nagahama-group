@@ -4,7 +4,6 @@ import { getImageUrl } from 'utils/utils';
 
 const WhoWeAre: React.FC<WhoWeAreProps> = ({ data }) => {
   const { header, cards } = data;
-
   const { language } = useAppContext();
 
   return (
@@ -23,7 +22,11 @@ const WhoWeAre: React.FC<WhoWeAreProps> = ({ data }) => {
         </p>
         <ul id="wea-cards" className="grid grid-cols-1 md:grid-cols-3 md:-ml-6">
           {cards.map(({ lead, header_jpn, imageURL, header, lead_jpn }) => (
-            <li id="wea-card" className="flex flex-col md:ml-6 mb-10 md:mb-0">
+            <li
+              key={header}
+              id="wea-card"
+              className="flex flex-col md:ml-6 mb-10 md:mb-0"
+            >
               <div id="wea-image" className="">
                 <img
                   className="h-full w-full"

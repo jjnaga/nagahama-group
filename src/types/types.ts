@@ -60,3 +60,35 @@ export interface WhoWeAreProps {
     cards: WhoWeAreCard[];
   };
 }
+
+export interface NetworkRegion {
+  name: string;
+  key: Regions;
+  active: boolean;
+}
+
+export interface Company {
+  name: string;
+  description?: string;
+  location: string;
+  contact: string;
+}
+
+export type Regions = 'default' | 'north_america' | 'asia' | 'europe';
+
+export type RegionLocations = {
+  [key in Regions]: {
+    region: string;
+    locations: Company[];
+  };
+};
+
+export interface NetworkProps {
+  body: {
+    lead: string;
+    lead_jpn: string;
+  };
+  mapURL: string;
+  regions: NetworkRegion[];
+  network: RegionLocations;
+}
