@@ -67,7 +67,7 @@ const Network: React.FC<NetworkProps> = ({
             </ul>
           </div>
         </div>
-        <div className="Visual_List block md:hidden lg:block bg-slate-200">
+        <div className="Visual_List  bg-slate-200">
           <ul className="flex flex-col px-8 py-3 md:flex-row justify-center  md:space-x-4">
             {regions.map((region) => (
               <button

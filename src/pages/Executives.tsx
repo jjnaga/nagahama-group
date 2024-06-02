@@ -55,7 +55,6 @@ const Executives = () => {
             {language === 'en'
               ? 'Since our establishment in 1905, Nagahama Group has been dedicated to providing leading services and products for the benefit of humanity. From our humble beginnings in America to our pioneering advancements in technology across the decades, and our recent return to the Japanese market in 2017, we have consistently pushed boundaries to drive humanity forward.'
               : '1905年の設立以来、長濱グループは人類の利益のために先進的なサービスと製品を提供することに尽力してきました。アメリカでの小さな始まりから、数十年にわたる技術革新、そして2017年の日本市場への復帰まで、私たちは常に限界を超え、人類の進歩を推進してきました。'}
-            '
           </p>
           <p className="text-lg mt-3">
             {language === 'en'

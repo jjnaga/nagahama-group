@@ -77,13 +77,34 @@ body {
   }
 }
 
-.Heading::after {
+.timeline::before {
   content: '';
-  display: inline-block;
-  height: 1px;
   position: absolute;
-  left: 0;
+  left: 50%;
+  top: 0;
   bottom: 0;
-  background-color: rgb(30 64 175);
-  width: 120px;
+  width: 2px;
+  background: #cbd5e0;
+}
+.timeline-item {
+  position: relative;
+  /* margin: 20px 0; */
+}
+
+@media (min-width: 600px) {
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background: #3182ce;
+    border-radius: 50%;
+    top: 50%;
+    z-index: 10;
+  }
+}
+.timeline-content {
+  position: relative;
 }
