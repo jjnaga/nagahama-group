@@ -1,9 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faEarthAmericas,
-  faCaretDown,
-} from '@fortawesome/free-solid-svg-icons';
+import { faEarthAmericas } from '@fortawesome/free-solid-svg-icons';
 import linksDataJSON from 'data/links.json';
 import { PossibleScrollDirections } from 'types/types';
 import { useAppContext } from 'context/Provider';

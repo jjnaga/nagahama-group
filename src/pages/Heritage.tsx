@@ -1,117 +1,101 @@
 import { useAppContext } from 'context/Provider';
 import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
 const Heritage = () => {
   const { headerHeight } = useAppContext();
   const [isLargeScreen, setIsLargeScreen] = useState(false);
 
-  // Determine if in large breakpoint.
   useEffect(() => {
-    const handleResize = () => {
-      setIsLargeScreen(window.innerWidth >= 1024);
-    };
-
+    const handleResize = () => setIsLargeScreen(window.innerWidth >= 1024);
     handleResize();
-
     window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // set margintop to the height of header if largescreen, else set to 0.
   const mainStyle = {
     marginTop: isLargeScreen ? `${headerHeight}px` : '0',
   };
 
+  const timeline = [
+    {
+      name: 'Kana Nagahama',
+      period: 'Unknown',
+      description:
+        'First Nagahama to land in Hawaii. A pioneer whose courage and determination laid the foundation for generations to come.',
+    },
+    {
+      name: 'James Shingen Nagahama',
+      period: '1919 - 2013',
+      description:
+        'A cornerstone of the family legacy. Grandfather to Jeremy James Nagahama, he shaped not just a business, but the values that would define future generations. His influence continues through his cherished middle name passed down to his grandson.',
+    },
+    {
+      name: 'Brian Nagahama',
+      period: '1957 - Present',
+      description: 'My father. 50% of who I am.',
+    },
+    {
+      name: 'Jeremy James Nagahama',
+      period: '1997 - Present',
+      description: 'Current CEO of Nagahama Group',
+      future: [
+        { year: 2025, event: 'Launch of Nagahama Tech Division' },
+        { year: 2028, event: 'Expansion into quantum computing' },
+        { year: 2030, event: 'First trillion-dollar valuation' },
+        { year: 2035, event: 'Mars colonization partnership' },
+        { year: 2040, event: 'Clean energy revolution' },
+        { year: 2050, event: 'Ten trillion dollar valuation achieved' },
+      ],
+    },
+  ];
+
   return (
-    <div className="max-w-5xl mx-auto p-8" style={mainStyle}>
-      <h1 className="text-4xl font-bold mb-8 text-center">
-        History of the Nagahama Family
-      </h1>
+    <div className="max-w-6xl mx-auto p-4 md:p-8" style={mainStyle}>
+      <h1 className="text-4xl font-bold mb-12 text-center">Nagahama Legacy</h1>
 
-      <div className="bg-white p-6 rounded-lg shadow-lg mb-8">
-        <h2 className="text-3xl font-semibold mb-4">
-          Kana Nagahama (1887 - 1958)
-        </h2>
-        <p className="text-lg mb-4">
-          Kana Nagahama founded Nagahama Group from humble beginnings in Hawaii.
-          Initially focusing on local needs, he expanded the company into a
-          statewide brand specializing in water and housing solutions. His
-          leadership and vision for sustainable growth helped Nagahama Group
-          establish a solid reputation throughout Hawaii. Kana served as the
-          president until his death in 1958, leaving a legacy of innovation and
-          community support.
-        </p>
-        <p className="text-lg">
-          Under Kana's guidance, Nagahama Group thrived despite the challenges
-          of the early 20th century. His emphasis on quality and customer
-          satisfaction laid a strong foundation for future generations. Kana's
-          commitment to his employees and clients alike made Nagahama Group a
-          trusted name in Hawaii's business community.
-        </p>
-      </div>
+      <div className="space-y-16">
+        {timeline.map((leader, index) => (
+          <motion.div
+            key={leader.name}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
+            className="bg-white rounded-lg shadow-xl overflow-hidden"
+          >
+            <div className="border-l-4 border-blue-600 p-6 md:p-8">
+              <div className="flex justify-between items-baseline mb-4">
+                <h2 className="text-2xl md:text-3xl font-semibold">
+                  {leader.name}
+                </h2>
+                <span className="text-gray-500">{leader.period}</span>
+              </div>
+              <p className="text-lg text-gray-700 mb-4">{leader.description}</p>
 
-      <div className="bg-white p-6 rounded-lg shadow-lg mb-8">
-        <h2 className="text-3xl font-semibold mb-4">
-          James Shingen Nagahama (1919 - 2013)
-        </h2>
-        <p className="text-lg mb-4">
-          James Shingen Nagahama expanded upon his father's legacy by taking
-          Nagahama Group to the west coast of America. Under his leadership, the
-          company became a leader in water management and large-scale
-          construction projects. James's strategic vision and ability to forge
-          key partnerships enabled Nagahama Group to grow exponentially.
-        </p>
-        <p className="text-lg">
-          His tenure saw the company navigate through numerous economic cycles,
-          consistently emerging stronger. By the time he passed the title to his
-          son Brian in 2002, James had firmly established Nagahama Group as a
-          significant player in the American infrastructure sector. His legacy
-          is marked by his relentless pursuit of excellence and innovation.
-        </p>
-      </div>
-
-      <div className="bg-white p-6 rounded-lg shadow-lg mb-8">
-        <h2 className="text-3xl font-semibold mb-4">
-          Brian Harumi Nagahama (1957 - Current)
-        </h2>
-        <p className="text-lg mb-4">
-          Brian Harumi Nagahama took over in 2002 and transformed Nagahama Group
-          into a tech conglomerate. He was instrumental in expanding the
-          company's footprint into Asia, starting with Korea in 2010, followed
-          by Hong Kong in 2012, and finally Japan in 2015. Brian's innovative
-          approach and strategic investments in technology positioned Nagahama
-          Group at the forefront of the industry.
-        </p>
-        <p className="text-lg">
-          Brian's leadership marked a period of significant technological
-          advancements and international growth for Nagahama Group. His efforts
-          in modernizing the company's operations and diversifying its portfolio
-          have made it a global powerhouse. Brian's commitment to excellence
-          continues to drive the company's success.
-        </p>
-      </div>
-
-      <div className="bg-white p-6 rounded-lg shadow-lg mb-8">
-        <h2 className="text-3xl font-semibold mb-4">
-          Jeremiah Nagahama (1997 - Current)
-        </h2>
-        <p className="text-lg mb-4">
-          In 2024, Jeremiah Nagahama took over the reins from his father, Brian.
-          As the newest leader of Nagahama Group, Jeremiah aims to build upon
-          the strong foundation laid by his predecessors. With a focus on
-          sustainability and innovation, he is committed to steering the company
-          towards new heights in the 21st century.
-        </p>
-        <p className="text-lg">
-          Jeremiah's vision includes leveraging advanced technologies to enhance
-          the company's operations and expanding its global reach. His
-          leadership is expected to usher in a new era of growth and success for
-          Nagahama Group, ensuring that the family legacy continues to thrive
-          for generations to come.
-        </p>
+              {leader.future && (
+                <div className="mt-8 space-y-4">
+                  <h3 className="text-xl font-semibold text-gray-800 mb-4">
+                    Future Milestones
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {leader.future.map((milestone) => (
+                      <div
+                        key={milestone.year}
+                        className="bg-gray-50 p-4 rounded-md"
+                      >
+                        <span className="text-blue-600 font-semibold">
+                          {milestone.year}
+                        </span>
+                        <p className="text-gray-700 mt-1">{milestone.event}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </motion.div>
+        ))}
       </div>
     </div>
   );
