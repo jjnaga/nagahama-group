@@ -67,17 +67,17 @@ const Footer: React.FC = () => {
           </ul>
           <ul className="Footer-Socials mt-8 flex flex-row items-center justify-center w-full">
             <li className="text-5xl mr-4">
-              <a href="https://tiktok.com">
+              <a href="https://www.tiktok.com/@jeremynagahama">
                 <FontAwesomeIcon icon={faTiktok} />
               </a>
             </li>
             <li className="text-5xl mx-4">
-              <a href="https://x.com">
+              <a href="https://x.com/sensanders?lang=en">
                 <FontAwesomeIcon icon={faTwitter} />
               </a>
             </li>
             <li className="text-5xl ml-4">
-              <a href="https://youtube.com">
+              <a href="https://www.youtube.com/@JJN45321">
                 <FontAwesomeIcon icon={faYoutube} />
               </a>
             </li>
