@@ -41,11 +41,6 @@ const executives: Executives = {
       duties: ['Chief Executive Officer for North America Head Office'],
     },
     {
-      name: 'Jay Watanabe',
-      title: 'Executive Officer',
-      duties: ['Chief Creative Officer for JDM Land'],
-    },
-    {
       name: 'Roy Stevenson',
       title: 'Executive Officer',
       duties: ['Chief Strategy Officer for Naga Construction Hawaii'],
@@ -56,19 +51,24 @@ const executives: Executives = {
       duties: ['Chief Strategy Officer for Naga Construction West'],
     },
     {
-      name: 'Satoshi Kobayashi',
+      name: 'Dominic Debernardis',
       title: 'Executive Officer',
       duties: ['Chief Operating Officer for Nagahama Kansai Region'],
     },
     {
-      name: 'Rina Tanaka',
+      name: 'Yaron Fernando',
       title: 'Executive Officer',
       duties: ['Chief Operating Officer for Nagahama Hokkaido Region'],
     },
     {
-      name: 'Pan Ling',
+      name: 'Dante Hassell',
       title: 'Executive Officer',
       duties: ['Chief Innovation Officer for Hong Kong Division'],
+    },
+    {
+      name: 'Trinity Ballesteros',
+      title: 'Executive Officer',
+      duties: ['Chief Creative Officer for JDM Land'],
     },
     {
       name: 'Justin Kim',
