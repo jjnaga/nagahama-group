@@ -3,7 +3,7 @@ import CarouselItem from 'components/CarouselItem';
 import Slider, { Settings } from 'react-slick';
 
 const Carousel: React.FC<CarouselProps> = ({ items }) => {
-  var settings: Settings = {
+  const settings: Settings = {
     dots: true,
     infinite: true,
     speed: 1000,
@@ -17,7 +17,7 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
 
   return (
     <Slider {...settings}>
-      {items.map((item, index) => (
+      {[...items].reverse().map((item, index) => (
         <CarouselItem key={index} {...item} keyString={String(index)} />
       ))}
     </Slider>
