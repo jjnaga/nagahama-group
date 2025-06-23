@@ -5,6 +5,7 @@ import Header from 'components/Header';
 import Heritage from 'pages/Heritage';
 import Footer from 'components/Footer';
 import Executives from 'pages/Executives';
+import Earnings from 'pages/Earnings';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/heritage" element={<Heritage />} />
           <Route path="/corporate" element={<Executives />} />
+          <Route path="/earnings" element={<Earnings />} />
         </Routes>
       </Router>
       <Footer />

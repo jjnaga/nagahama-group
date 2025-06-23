@@ -9,6 +9,11 @@
       "title": "Corporate Information",
       "title_jp": "企業情報",
       "url": "/corporate"
+    },
+    {
+      "title": "Quarterly Earnings",
+      "title_jp": "決算情報",
+      "url": "/earnings"
     }
   ]
 }
