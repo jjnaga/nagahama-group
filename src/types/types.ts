@@ -111,3 +111,60 @@ export interface DirectorInfo {
   title: string;
   duties: string[];
 }
+
+export type EarningsRelease = {
+  title: string;
+  date: string;
+  dateJapanese: string;
+  year: string;
+  quarter: string;
+  summary: string;
+  summaryJapanese: string;
+  data?: EarningsData;
+};
+
+export type EarningsData = {
+  revenue: {
+    total: number;
+    byProduct: {
+      [key: string]: number;
+    };
+    byRegion: {
+      [key: string]: number;
+    };
+  };
+  expenses: {
+    total: number;
+    byRegion: {
+      [key: string]: number;
+    };
+  };
+  netIncome: number;
+  grossProfit: number;
+  operatingIncome: number;
+  earnings: {
+    eps: number; // Earnings per share
+    ebitda: number; // Earnings before interest, taxes, depreciation, and amortization
+  };
+  cashFlow: {
+    operating: number;
+    investing: number;
+    financing: number;
+    freeCashFlow: number;
+  };
+  balanceSheet: {
+    totalAssets: number;
+    totalLiabilities: number;
+    shareholdersEquity: number;
+    cash: number;
+  };
+  keyMetrics: {
+    grossMargin: number; // percentage
+    operatingMargin: number; // percentage
+    netMargin: number; // percentage
+    returnOnEquity: number; // percentage
+  };
+};
+
+// Type for earnings release with key
+export type EarningsReleaseWithKey = EarningsRelease & { key: string };
