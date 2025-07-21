@@ -1,25 +1,18 @@
 {
   "highlights": [
     {
-      "title": "Earnings Report Q1 and Q2 2025",
-      "description": "Earnings release for the first half of 2025",
-      "description_japanese": "2025年上期決算発表",
-      "url": "/",
+      "title": "Earnings Q2 2025",
+      "description": "Earnings release for the second quarter of 2025",
+      "description_japanese": "2025年第二四半期決算発表",
+      "url": "/earnings/q2-2025",
       "imageURL": "nagahama.jpg"
     },
     {
       "title": "TheBus App",
       "description": "Improved bus app for Hawaii released",
       "description_japanese": "ハワイ向け改良バスアプリがリリース",
-      "url": "/",
+      "url": "https://bettahbus.com",
       "imageURL": "bus_mobile.jpg"
-    },
-    {
-      "title": "Earnings Report Q1 2024",
-      "description": "Earnings release for the three months ended March 31, 2024",
-      "description_japanese": "2024年3月31日までの3か月間の業績発表",
-      "url": "/",
-      "imageURL": "nagahama.jpg"
     }
   ]
 }
